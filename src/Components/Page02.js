@@ -1,27 +1,58 @@
+import Header from "./Header";
+import CardNumber from "./Card";
+import React from "react";
+
+
 function Page02() {
+    const infos = [
+    {
+        question: "O que é JSX?",
+        answer: "Uma extensão de linguagem do JavaScript"
+    },
+    {
+        question: "O React é",
+        answer: "uma biblioteca JavaScript para construção de interfaces"
+    },
+    {
+        question: "Componentes devem iniciar com",
+        answer: "letra maiúscula"
+    },
+    {
+        question: "Podemos colocar __ dentro do JSX",
+        answer: "expressões"
+    },
+    {
+        question: "O ReactDOM nos ajuda __",
+        answer: "interagindo com a DOM para colocar componentes React na mesma"
+    },
+    {
+        question: "Usamos o npm para __",
+        answer: "gerenciar os pacotes necessários e suas dependências"
+    },
+    {
+        question: "Usamos props para __",
+        answer: "passar diferentes informações para componentes"
+    },
+    {
+        question: "Usamos estado (state) para __ ",
+        answer: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"
+    }]; 
+
+    let newlist = infos.sort(() => Math.random() - 0.5);
+
     return (
         <div className="main-2">
-            <div className="header">
-                <img className="logo-small" src="./assets/images/logo-pequeno.png" alt="Logo Zap" />
-                <h1>ZapRecall</h1>
-            </div>
+            <Header />
             <div className="cards">
-               <div className="card">
-                <h2>Pergunta 1</h2>
-                <img className="play" src="./assets/images/play.png" alt="play"></img>
-               </div>
-               <div className="card">
-                <h2>Pergunta 1</h2>
-                <img className="play" src="./assets/images/play.png" alt="play"></img>
-               </div>
-               <div className="card">
-                <h2>Pergunta 1</h2>
-                <img className="play" src="./assets/images/play.png" alt="play"></img>
-               </div>
-               <div className="card">
-                <h2>Pergunta 1</h2>
-                <img className="play" src="./assets/images/play.png" alt="play"></img>
-               </div>
+             {newlist.map( (value, index) =>  (
+                <CardNumber 
+                   key={index}
+                   numbcard={index + 1}
+                   question={value.question}
+                   answer={value.answer}
+                   />
+             ))};
+              
             </div>
             <div className="footer">0/4 CONCLUÍDOS</div>
         </div>
