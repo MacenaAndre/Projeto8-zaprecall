@@ -17,7 +17,7 @@ function Footer({ infos, numbanswers, correct, icons }) {
         return (
             <div className="footer">
                 <div className="result-title">
-                    <img src="./assets/images/party.png" alt="party"></img>
+                    <img src="./assets/images/sad.png" alt="sad"></img>
                     <h6>Putz...</h6>
                 </div>
                 <div className="result-description">
@@ -38,7 +38,7 @@ function Footer({ infos, numbanswers, correct, icons }) {
         return (
             <div className="footer">
                 <div className="result-title">
-                    <img src="./assets/images/sad.png" alt="sad"></img>
+                    <img src="./assets/images/party.png" alt="party"></img>
                     <h6>Parabéns!</h6>
                 </div>
                 <div className="result-description">
