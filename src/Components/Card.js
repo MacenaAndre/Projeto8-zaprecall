@@ -1,6 +1,6 @@
 import React from "react";
 
-function CardNumber({numbcard, question, answer}) {
+function CardNumber({numbcard, question, answer, clicked, setClicked}) {
     let [game, setGame] = React.useState(1);
     let [result, setResult] = React.useState("");
     let [nameclass, setNameclass] = React.useState("");
@@ -47,6 +47,7 @@ function CardNumber({numbcard, question, answer}) {
                         setGame(4);
                         setResult("close-circle");
                         setNameclass("card fail-result");
+                        setClicked(() => clicked + 1)
                         }}>
                        <h4>Não lembrei</h4>
                    </div>
@@ -76,6 +77,7 @@ function CardNumber({numbcard, question, answer}) {
                         setGame(4);
                         setResult("close-circle");
                         setNameclass("card fail-result");
+                        setClicked(clicked + 1)
                         }}>
                        <h4>Não lembrei</h4>
                    </div>

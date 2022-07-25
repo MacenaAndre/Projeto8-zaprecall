@@ -40,6 +40,8 @@ function Page02() {
 
     let newlist = infos.sort(() => Math.random() - 0.5);
 
+    let [clicked, setClicked] = React.useState(0);
+
     return (
         <div className="main-2">
             <Header />
@@ -50,11 +52,13 @@ function Page02() {
                    numbcard={index + 1}
                    question={value.question}
                    answer={value.answer}
+                   clicked={clicked}
+                   setClicked={setClicked}
                    />
              ))};
               
             </div>
-            <div className="footer">0/4 CONCLUÍDOS</div>
+            <div className="footer">{clicked}/4 CONCLUÍDOS</div>
         </div>
     );
 }
