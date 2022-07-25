@@ -1,5 +1,6 @@
 import Header from "./Header";
-import CardNumber from "./Card";
+import Card from "./Card";
+import Footer from "./Footer";
 import React from "react";
 
 
@@ -41,24 +42,38 @@ function Page02() {
     let newlist = infos.sort(() => Math.random() - 0.5);
 
     let [clicked, setClicked] = React.useState(0);
+    let [correct, setCorrect] = React.useState(0);
+    const [icons, setIcons] = React.useState([]);
 
     return (
         <div className="main-2">
             <Header />
             <div className="cards">
              {newlist.map( (value, index) =>  (
-                <CardNumber 
+                <Card 
                    key={index}
+                   infos={infos}
                    numbcard={index + 1}
                    question={value.question}
                    answer={value.answer}
                    clicked={clicked}
                    setClicked={setClicked}
+                   correct={correct}
+                   setCorrect={setCorrect}
+                   icons={icons}
+                   setIcons={setIcons}
                    />
              ))};
               
             </div>
-            <div className="footer">{clicked}/4 CONCLUÍDOS</div>
+            
+            <Footer 
+                infos={infos}
+                numbanswers={clicked}
+                correct={correct}
+                icons={icons}
+            />  
+            
         </div>
     );
 }
